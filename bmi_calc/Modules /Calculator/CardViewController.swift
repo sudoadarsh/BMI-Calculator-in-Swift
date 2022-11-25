@@ -37,9 +37,10 @@ class CardViewController: UIViewController {
     
     // MARK: - IBActions.
     
-    @IBAction func cardTapped(_ sender: Any) {
+    @IBAction func cardTapped(_ sender: CardView) {
+        if(!sender.on){
         toggleColor(card: femaleCard)
-        toggleColor(card: maleCard)
+        toggleColor(card: maleCard)}
     }
     
     @IBAction func heightSliderChanged(_ sender: Any) {
@@ -77,7 +78,7 @@ class CardViewController: UIViewController {
         self.maleCard.backgroundColor = ColorC.backgroundCard
         
         self.weightCard.build(max: 300, min: 15, current: 65)
-        self.ageCard.build(max: 100, min: 1, current: 25)
+        self.ageCard.build(max: 65, min: 18, current: 25)
         
         self.heightOutlet.text = String(171)
         self.weightOutlet.text = String(self.weightCard.current)

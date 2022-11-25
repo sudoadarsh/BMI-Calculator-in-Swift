@@ -19,6 +19,10 @@ class CardRouter {
     
     func pushToContinueView() {
         let resultVc: ResultViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "ResultID") as! ResultViewController
+        
+        // Setting up values in the [ResultViewController].
+        resultVc.setup(isMale: false, height: Int(vc.heightOutlet.text ?? "171") ?? 171, weight: Int(vc.weightOutlet.text ?? "65") ?? 65, age: Int(vc.ageOutlet.text ?? "25") ?? 25)
+        
         vc.navigationController?.pushViewController(resultVc, animated: true)
     }
 }
